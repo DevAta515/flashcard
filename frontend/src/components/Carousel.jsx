@@ -18,7 +18,7 @@ const Carousel = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/flashcards/flashes')
+        axios.get('https://flashcard-backend-vduk.onrender.com/api/flashcards/flashes')
             .then(response => {
                 setCards(response.data);
             })
