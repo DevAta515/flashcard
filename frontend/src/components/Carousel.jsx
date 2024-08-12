@@ -56,7 +56,7 @@ const Carousel = () => {
     };
 
     const handleDeleteCard = (id) => {
-        axios.delete(`http://localhost:5000/api/flashcards/delete/?id=${id}`)
+        axios.delete(`https://flashcard-backend-vduk.onrender.com/api/flashcards/delete/?id=${id}`)
             .then(() => {
                 setCards(cards.filter(card => card.id !== id));
             })
