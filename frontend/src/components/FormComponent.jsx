@@ -49,7 +49,7 @@ const FormComponent = ({ closeForm, editingIndex }) => {
         }
 
         if (work === "Adding") {
-            axios.post('http://localhost:5000/api/flashcards/add', newCard)
+            axios.post('https://flashcard-backend-vduk.onrender.com/api/flashcards/add', newCard)
                 .then(response => {
                     console.log(newCard);
                     setCards([...cards, { ...newCard, id: response.data.id }]);
@@ -60,7 +60,7 @@ const FormComponent = ({ closeForm, editingIndex }) => {
 
         if (work === "Updating") {
             const id = cards[editingIndex].id;
-            axios.put(`http://localhost:5000/api/flashcards/update/?id=${id}`, updatedCard)
+            axios.put(`https://flashcard-backend-vduk.onrender.com/api/flashcards/update/?id=${id}`, updatedCard)
                 .then(() => {
                     setCards(cards.map(card =>
                         card.id === id ? { ...card, ...updatedCard } : card
